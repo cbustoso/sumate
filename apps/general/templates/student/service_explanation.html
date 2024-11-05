@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+            <!--begin::Toolbar container-->
+            <div class="d-flex flex-column flex-row-fluid">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-center pt-1">
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">
+                            <a href="{% url 'login' %}" class="text-white text-hover-primary">
+                                <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">Acerca de Súmate</li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Toolbar wrapper=-->
+            </div>
+            <!--end::Toolbar container=-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Wrapper container-->
+    <div class="app-container container-xxl">
+        <!--begin::Main-->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!--begin::About card-->
+                    <div class="card">
+                        <!--begin::Body-->
+                        <div class="card-body p-lg-17">
+                            <!--begin::About-->
+                            <div class="mb-18">
+                                <!--begin::Wrapper-->
+                                <div class="mb-10">
+                                    <!--begin::Top-->
+                                    <div class="text-center mb-15">
+                                        <!--begin::Title-->
+                                        <h3 class="fs-2hx text-gray-900 mb-5">
+                                        <!--begin::Underline-->
+                                        <span class="d-inline-block position-relative ms-2">
+                                            <!--begin::Label-->
+                                            <span class="d-inline-block mb-2 fs-2tx fw-bold">
+                                                ¿ Qué es Súmate ?
+                                            </span>
+                                            <!--end::Label-->
+                                            <!--begin::Line-->
+                                            <span class="d-inline-block position-absolute h-8px bottom-0 end-0 start-0 translate rounded" style="background-color: #e3c40c !important;"></span>
+                                            <!--end::Line-->
+                                        </span>
+                                        <!--end::Underline-->
+                                        </h3>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <br>
+                                        <div class="fs-5 text-muted fw-semibold">
+                                            Es un programa en el que podrás transformar tu participación en las distintas actividades de Duoc UC sede Alameda en puntajes, que a su vez podrán ser canjeados por diversos premios según lo indicado en las bases del programa.
+                                        </div>
+                                        <!--end::Text-->
+                                        <div class="embed-responsive">
+                                            <video class="embed-responsive-item rounded" src="{% static 'assets/media/public/presentacion.mp4' %}" controls allowfullscreen="allowfullscreen"></iframe>
+                                        </div>
+                                    </div>
+                                    <!--end::Top-->
+   
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::About-->
+                            <!--begin::Team-->
+                            <div class="mb-18">
+                                <!--begin::Heading-->
+                                <div class="text-center mb-12">
+                                    <!--begin::Title-->
+                                    <h3 class="fs-2hx text-gray-900 mb-5">¿Necesitas ayuda?</h3>
+                                    <!--end::Title-->
+                                    <!--begin::Sub-title-->
+                                    <div class="fs-2 text-muted fw-semibold">
+                                        Te presentamos al team Súmate
+                                        <br/>
+                                        ¡No dudes en contactarnos, estamos para ayudarte!
+                                    </div>
+                                    <!--end::Sub-title=-->
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Slider-->
+                                <div class="tns tns-default mb-10">
+                                    <!--begin::Wrapper-->
+                                    <div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="18000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev" data-tns-next-button="#kt_team_slider_next" data-tns-responsive="{1200: {items: 3}, 992: {items: 2}}">
+                                        <!--begin::Item-->
+                                        <div class="text-center">
+                                            <!--begin::Photo-->
+                                            <div class="rounded-circle mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('{% static 'assets/media/public/staff/francisco.jpg'%}')"></div>
+                                            <!--end::Photo-->
+                                            <!--begin::Person-->
+                                            <div class="mb-0">
+                                                <!--begin::Name-->
+                                                <a class="text-gray-900 fw-bold text-hover-primary fs-3">Francisco Conrado</a>
+                                                <!--end::Name-->
+                                                <!--begin::Position-->
+                                                <div class="text-muted fs-6 fw-semibold mt-1">Coordinador de Desarrollo estudiantil Vespertino</div>
+                                                <div class="text-gray-700 fs-6 fw-semibold mt-1">fconradof@duoc.cl</div>
+                                                <!--begin::Position-->
+                                            </div>
+                                            <!--end::Person-->
+                                        </div>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <div class="text-center">
+                                            <!--begin::Photo-->
+                                            <div class="rounded-circle mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('{% static 'assets/media/public/staff/cristian.jpg'%}')"></div>
+                                            <!--end::Photo-->
+                                            <!--begin::Person-->
+                                            <div class="mb-0">
+                                                <!--begin::Name-->
+                                                <a class="text-gray-900 fw-bold text-hover-primary fs-3">Cristian Rojas</a>
+                                                <!--end::Name-->
+                                                <!--begin::Position-->
+                                                <div class="text-muted fs-6 fw-semibold mt-1">Coordinador de Asuntos estudiantiles</div>
+                                                <div class="text-gray-700 fs-6 fw-semibold mt-1">crrojasa@duoc.cl</div>
+                                                <!--begin::Position-->
+                                            </div>
+                                            <!--end::Person-->
+                                        </div>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <div class="text-center">
+                                            <!--begin::Photo-->
+                                            <div class="rounded-circle mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('{% static 'assets/media/public/staff/maryluz.jpg'%}')"></div>
+                                            <!--end::Photo-->
+                                            <!--begin::Person-->
+                                            <div class="mb-0">
+                                                <!--begin::Name-->
+                                                <a class="text-gray-900 fw-bold text-hover-primary fs-3">Mariluz Naranjo</a>
+                                                <!--end::Name-->
+                                                <!--begin::Position-->
+                                                <div class="text-muted fs-6 fw-semibold mt-1">Asistente del punto estudiantil</div>
+                                                <div class="text-gray-700 fs-6 fw-semibold mt-1">mnaranjo@duoc.cl</div>
+                                                <!--begin::Position-->
+                                            </div>
+                                            <!--end::Person-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                    <!--begin::Button-->
+                                    <button class="btn btn-icon btn-active-color-primary" id="kt_team_slider_prev">
+                                        <i class="ki-outline ki-left fs-3x"></i>
+                                    </button>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <button class="btn btn-icon btn-active-color-primary" id="kt_team_slider_next">
+                                        <i class="ki-outline ki-right fs-3x"></i>
+                                    </button>
+                                    <!--end::Button-->
+                                </div>
+                                <!--end::Slider-->
+                            </div>
+                            <!--end::Team-->
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::About card-->
+                </div>
+                <!--end::Content-->
+            </div>
+            <!--end::Content wrapper-->
+            <!--begin::Footer-->
+            {% block footer %}
+                {% include 'footer.html' %}
+            {% endblock %}
+            <!--end::Footer-->
+        </div>
+        <!--end:::Main-->
+    </div>
+    <!--end::Wrapper container-->
+</div>
+{% endblock %}

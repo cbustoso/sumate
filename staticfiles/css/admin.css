@@ -1,0 +1,30 @@
+body {
+    background-image: url('/static/img/Background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#header, #branding {
+    background-color: #191817 !important;
+    color: #e3c40c !important;
+}
+
+.breadcrumbs {
+    background-color: #191817 !important;
+}
+
+.module caption, .dashboard-module section {
+    background-color: #191817 !important;
+}
+
+.module caption a, .dashboard-module section a {
+    color: #e3c40c !important;
+}
+
+.addlink:hover, .changelink:hover {
+    background-color: #e3c40c !important;
+}
+
+.addlink, .changelink {
+    border-color: #191817 !important;
+}

@@ -1,0 +1,231 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block content %}
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+            <!--begin::Toolbar container-->
+            <div class="d-flex flex-column flex-row-fluid">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-center pt-1">
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">
+                            <a href="{% url 'login' %}" class="text-white text-hover-primary">
+                                <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">Bases de Súmate</li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Toolbar wrapper=-->
+            </div>
+            <!--end::Toolbar container=-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Wrapper container-->
+    <div class="app-container container-xxl">
+        <!--begin::Main-->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!--begin::About card-->
+                    <div class="card">
+                        <!--begin::Body-->
+                        <div class="card-body p-lg-17">
+                            <!--begin::About-->
+                            <div class="mb-18">
+                                <!--begin::Wrapper-->
+                                <div class="mb-10">
+                                    <!--begin::Top-->
+                                    <div class="text-center mb-15">
+                                        <!--begin::Title-->
+                                        <!--begin::Underline-->
+                                        <span class="d-inline-block position-relative ms-2">
+                                            <!--begin::Label-->
+                                            <span class="d-inline-block mb-2 fs-2tx fw-bold">
+                                                Bases
+                                            </span>
+                                            <!--end::Label-->
+
+                                            <!--begin::Line-->
+                                            <span class="d-inline-block position-absolute h-8px bottom-0 end-0 start-0 translate rounded" style="background-color: #e3c40c !important;"></span>
+                                            <!--end::Line-->
+                                        </span>
+                                        <!--end::Underline-->
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fs-3 text-muted fw-semibold pt-5">
+                                            Te invitamos a que revises nuestras redes sociales o también puedes descargar las bases del programa  
+                                            <span class="d-inline-block position-relative">
+                                                <!--begin::Label-->
+                                                <span class="d-inline-block fs-4">
+                                                    {% comment %} <a href="{% static 'assets/media/public/files/bases.pdf' %}" class="link-primary" download="sumate-bases-programa.pdf">
+                                                        aquí
+                                                    </a> {% endcomment %}
+                                                    <a href="{{ bases.file.url}}" class="link-primary" download="sumate-bases-programa.pdf">
+                                                        aquí
+                                                    </a>
+                                                </span>
+                                                <!--end::Label-->
+    
+                                                <!--begin::Line-->
+                                                <span class="d-inline-block position-absolute h-4px bottom-0 end-0 start-0 translate rounded" style="background-color: #e3c40c !important;"></span>
+                                                <!--end::Line-->
+                                            </span>
+                                            <br />
+                                            Allí encontrarás más información referente a nuestros servicios.
+                                        </div>
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Top-->
+                                    <!--end::Container-->
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Description-->
+                                <div class="fs-5 fw-semibold text-gray-600">
+                                    <!--begin::Text-->
+                                    <p class="mb-8">
+                                        Súmate es un programa en el que podrás transformar su participación en las distintas actividades de Duoc UC sede Alameda en puntajes, que a su vez podrán ser canjeados por diversos premios.
+                                    </p>
+                                    <!--end::Text-->
+                                    <!--begin::Text-->
+                                    <p class="mb-8">
+                                        El programa no solo fomenta la participación estudiantil en actividades que complementan su formación académica, sino que también promueve el desarrollo de habilidades blandas, el trabajo en
+                                        equipo y el compromiso con la comunidad. Los puntos tienen una vigencia de dos semestres académicos, lo que incentiva la participación constante y el aprovechamiento continuo de las oportunidades
+                                        ofrecidas por Duoc UC sede Alameda.
+                                    </p>
+                                    <!--end::Text-->
+                                    <!--begin::Text-->
+                                    <p class="mb-8">
+                                        Súmate representa una excelente manera de reconocer y recompensar el compromiso estudiantil, incentivando la participación activa en la vida universitaria y reforzando la importancia de
+                                        una educación integral. Para más información sobre cómo participar y los premios disponibles, los estudiantes pueden acceder a la página web del programa mediante un código QR o consultar 
+                                        directamente con el coordinador de cada actividad.
+                                    </p>
+                                    <!--end::Text-->
+                                    <!--end::Text-->
+                                </div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::About-->
+                            <!--begin::Statistics-->
+                            <div class="card bg-light mb-18">
+                                <!--begin::Body-->
+                                <div class="card-body py-15">
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-center">
+                                        <!--begin::Items-->
+                                        <div class="d-flex flex-center flex-wrap mb-10 mx-auto gap-5 w-xl-900px">
+                                            <!--begin::Item-->
+                                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-lg-10">
+                                                <!--begin::Content-->
+                                                <div class="text-center">
+                                                    <!--begin::Symbol-->
+                                                    <i class="ki-outline ki-calendar-tick fs-2tx text-primary"></i>
+                                                    <!--end::Symbol-->
+                                                    <!--begin::Text-->
+                                                    <div class="mt-1">
+                                                        <!--begin::Animation-->
+                                                        <div class="fs-lg-2hx fs-2x fw-bold text-gray-800 d-flex align-items-center">
+                                                            <div class="min-w-70px" data-kt-countup="true" data-kt-countup-value="{{ total_events }}">0</div>
+                                                            +
+                                                        </div>
+                                                        <!--end::Animation-->
+                                                        <!--begin::Label-->
+                                                        <span class="text-gray-600 fw-semibold fs-5 lh-0">Eventos registrados</span>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Text-->
+                                                </div>
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-lg-10">
+                                                <!--begin::Content-->
+                                                <div class="text-center">
+                                                    <!--begin::Symbol-->
+                                                    <i class="ki-outline ki-plus-circle fs-2tx text-success"></i>
+                                                    <!--end::Symbol-->
+                                                    <!--begin::Text-->
+                                                    <div class="mt-1">
+                                                        <!--begin::Animation-->
+                                                        <div class="fs-lg-2hx fs-2x fw-bold text-gray-800 d-flex align-items-center">
+                                                            <div class="min-w-50px" data-kt-countup="true" data-kt-countup-value="{{ total_points }}">0</div>
+                                                        </div>
+                                                        <!--end::Animation-->
+                                                        <!--begin::Label-->
+                                                        <span class="text-gray-600 fw-semibold fs-5 lh-0">Puntos entregados</span>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Text-->
+                                                </div>
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-lg-10">
+                                                <!--begin::Content-->
+                                                <div class="text-center">
+                                                    <!--begin::Symbol-->
+                                                    <i class="ki-outline ki-user-tick fs-2tx text-info"></i>
+                                                    <!--end::Symbol-->
+                                                    <!--begin::Text-->
+                                                    <div class="mt-1">
+                                                        <!--begin::Animation-->
+                                                        <div class="fs-lg-2hx fs-2x fw-bold text-gray-800 d-flex align-items-center">
+                                                            <div class="min-w-50px" data-kt-countup="true" data-kt-countup-value="{{ total_students }}">0</div>
+                                                        </div>
+                                                        <!--end::Animation-->
+                                                        <!--begin::Label-->
+                                                        <span class="text-gray-600 fw-semibold fs-5 lh-0">Alumnos Activos</span>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Text-->
+                                                </div>
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Item-->
+                                        </div>
+                                        <!--end::Items-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Statistics-->
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::About card-->
+                </div>
+                <!--end::Content-->
+            </div>
+            <!--end::Content wrapper-->
+            <!--begin::Footer-->
+            {% block footer %} {% include 'footer.html' %} {% endblock %}
+            <!--end::Footer-->
+        </div>
+        <!--end:::Main-->
+    </div>
+    <!--end::Wrapper container-->
+</div>
+{% endblock %}

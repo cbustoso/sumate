@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% load static %} 
+{% block content %}
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+            <!--begin::Toolbar container-->
+            <div class="d-flex flex-column flex-row-fluid">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-center pt-1">
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">
+                            <a href="{% url 'login' %}" class="text-white text-hover-primary">
+                                <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">Reporte - General por Tipo de Evento</li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Toolbar wrapper=-->
+            </div>
+            <!--end::Toolbar container=-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--begin::Wrapper container-->
+    <div class="app-container container-xxl">
+        <!--begin::Main-->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!--begin::Products-->
+                    <div class="card card-flush">
+                        <!--begin::Card header-->
+                        <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <!--begin::Search-->
+                                <div class="d-flex align-items-center position-relative my-1">
+                                    <i class="ki-duotone ki-magnifier fs-1 position-absolute ms-6"><span class="path1"></span><span class="path2"></span></i>
+                                    <input type="text" data-kt-docs-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar estudiante"/>
+                                </div>
+                                <!--end::Search-->
+                            </div>
+                            <!--end::Card title-->
+                            <!--begin::Card toolbar-->
+                            <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                                    <div class="w-100 mw-150px">
+                                        <!--begin::Select2-->
+                                        <select id="kt_semesters" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Semestres" data-kt-ecommerce-product-filter="status">
+                                            <option>Todos</option>
+                                            {% for semester in semesters %}
+                                            <option value="{{ semester.id }}">{{ semester.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <!--end::Select2-->
+                                    </div>
+                                    <div class="w-100 mw-150px">
+                                        <!--begin::Select2-->
+                                        <select id="kt_events" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Eventos" data-kt-ecommerce-product-filter="events">
+                                            <option>Todos</option>
+                                            {% for event in event_types %}
+                                            <option value="{{ event.id }}">{{ event.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <!--end::Select2-->
+                                    </div>
+                                </div>
+                                <!--begin::Export dropdown-->
+                                <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <i class="ki-duotone ki-exit-down fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    Reportes
+                                </button>
+                                <!--begin::Menu-->
+                                <div id="kt_datatable_example_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <a href="#" class="menu-link px-3" data-kt-export="excel">
+                                        Exportar a Excel
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                </div>
+                                <!--end::Menu-->
+                                <!--end::Export dropdown-->
+                                <!--begin::Hide default export buttons-->
+                                <div id="kt_generic_datatable_buttons" class="d-none"></div>
+                                <!--end::Hide default export buttons->
+                            </div>
+                            <!--end::Card toolbar-->
+                        </div
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-0 table-responsive">
+                            <!--begin::Table-->
+                            <table class="table table-hover table-rounded align-middle table-row-dashed fs-6 gy-5" id="kt_generic_datatable">
+                                <thead>
+                                    <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase">
+                                        <th class="min-w-100px">TIPO EVENTO</th>
+                                        <th class="min-w-100px">SEMESTRE</th>
+                                        <th class="min-w-100px">ASISTENTES</th>
+                                        <th class="min-w-100px">TOTAL</th>
+                                        <th class="min-w-100px">PORCENTAJE</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="">
+                                </tbody>
+                            </table>
+                            <!--end::Table-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Products-->
+                </div>
+                <!--end::Content-->
+            <!--end::Content wrapper-->
+            <!--begin::Footer--> {% block footer %} {% include 'footer.html' %} {% endblock %}
+            <!--end::Footer-->
+        </div>
+        <!--end:::Main-->
+    </div>
+    <!--end::Wrapper container-->
+</div>
+
+<script type="module" src="{% static 'assets/js/admin/participation_events_type_module.js' %}"></script>
+
+{% endblock content %}

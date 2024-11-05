@@ -1,0 +1,56 @@
+[
+    {
+        "model": "account.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$vsr3BYG45dL680Sb4QeILh$WVQjbSa7DnrdcxBxm6ZlKnOlpZ/hvcW1LbpMmY4i2RU=",
+            "last_login": "2024-03-04T04:57:13.758Z",
+            "is_superuser": true,
+            "username": "admin@duoc.cl",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-02-17T14:23:13Z",
+            "uuid": "56be68a3-eb8b-4809-b380-1293840a3c28",
+            "run": null,
+            "email": "admin@duoc.cl",
+            "phone": null,
+            "shift": "D",
+            "career": null,
+            "campus": null,
+            "points": 0,
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "account.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$8citVV7C09UQzJHTxu85Ak$fBjDEFgCJPxyREAcCvkz8TZxFdwMYvz4FA2wtWwGKtE=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "colaborador@duoc.cl",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-02-17T14:24:36Z",
+            "uuid": "e9c90d1a-7614-48b3-a261-1c5567032d53",
+            "run": null,
+            "email": "colaborador@duoc.cl",
+            "phone": null,
+            "shift": "D",
+            "career": null,
+            "campus": null,
+            "points": 0,
+            "groups": [
+                2
+            ],
+            "user_permissions": []
+        }
+    }
+]

@@ -1,0 +1,218 @@
+[
+    {
+        "model": "account.career",
+        "pk": 1,
+        "fields": {
+            "name": "Actuación",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 2,
+        "fields": {
+            "name": "Administración de Empresas",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 3,
+        "fields": {
+            "name": "Administración Hotelera",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 4,
+        "fields": {
+            "name": "Administración de Redes y Telecomunicaciones",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 5,
+        "fields": {
+            "name": "Analista Programador",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 6,
+        "fields": {
+            "name": "Analista Programador Computacional",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 7,
+        "fields": {
+            "name": "Animación Digital",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 8,
+        "fields": {
+            "name": "Auditoria",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 9,
+        "fields": {
+            "name": "Técnico en Comercio Exterior",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 10,
+        "fields": {
+            "name": "Comunicación Audiovisual",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 11,
+        "fields": {
+            "name": "Contabilidad General Mención Legislación Tributari",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 12,
+        "fields": {
+            "name": "Contabilidad Tributaria",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 13,
+        "fields": {
+            "name": "Desarrollo de Aplicaciones",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 14,
+        "fields": {
+            "name": "Desarrollo y Diseño Web",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 15,
+        "fields": {
+            "name": "Dibujo y Modelamiento Arquitectónico y Estructural",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 16,
+        "fields": {
+            "name": "Diseño de Ambientes",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 17,
+        "fields": {
+            "name": "Diseño de Vestuario",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 18,
+        "fields": {
+            "name": "Diseño Gráfico",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 19,
+        "fields": {
+            "name": "Diseño Industrial",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 20,
+        "fields": {
+            "name": "Ecoturismo",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 21,
+        "fields": {
+            "name": "Gastronomía",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 22,
+        "fields": {
+            "name": "Gastronomía Internacional",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 23,
+        "fields": {
+            "name": "Ilustración",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 24,
+        "fields": {
+            "name": "Informática Biomédica",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 25,
+        "fields": {
+            "name": "Ingeniería en Administración Mención Innovación y",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 26,
+        "fields": {
+            "name": "Ingeniería En Administración Mención Finanzas",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.career",
+        "pk": 27,
+        "fields": {
+            "name": "Ingeniería Agrícola",
+            "is_active": true
+        }
+    }
+]

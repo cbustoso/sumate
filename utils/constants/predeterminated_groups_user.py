@@ -1,0 +1,2 @@
+GROUP_NAME_ADMINISTRATOR = 'administrator'
+GROUP_NAME_STUDENT = 'student'

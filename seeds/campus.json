@@ -1,0 +1,114 @@
+[
+    {
+        "model": "account.campus",
+        "pk": 1,
+        "fields": {
+            "name": "Sede Alameda",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 2,
+        "fields": {
+            "name": "Sede Padre Alonso de Ovalle",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 3,
+        "fields": {
+            "name": "Sede Antonio Varas",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 4,
+        "fields": {
+            "name": "Sede Maipú",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 5,
+        "fields": {
+            "name": "Sede Melipilla",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 6,
+        "fields": {
+            "name": "Sede Plaza Norte",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 7,
+        "fields": {
+            "name": "Sede Plaza Oeste",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 8,
+        "fields": {
+            "name": "Sede Plaza Vespucio",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 9,
+        "fields": {
+            "name": "Sede Puente Alto",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 10,
+        "fields": {
+            "name": "Sede San Bernardo",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 11,
+        "fields": {
+            "name": "Sede San Carlos de Apoquindo",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 12,
+        "fields": {
+            "name": "Sede San Joaquín",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 13,
+        "fields": {
+            "name": "Sede Valparaíso",
+            "is_active": true
+        }
+    },
+    {
+        "model": "account.campus",
+        "pk": 14,
+        "fields": {
+            "name": "Sede Viña del Mar",
+            "is_active": true
+        }
+    }
+]

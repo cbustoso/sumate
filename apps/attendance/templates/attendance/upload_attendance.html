@@ -1,0 +1,166 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<style>
+    body { font-family: Arial, sans-serif; }
+    .centered-form-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .centered-form {
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .centered-form input[type="file"] {
+        margin-bottom: 20px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        border-radius: 5px;
+    }
+    .modal-content button {
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+    }
+    .modal-content button:hover {
+        background-color: #0056b3;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="centered-form-container">
+    <form id="uploadForm" method="post" enctype="multipart/form-data" class="centered-form">
+        {% csrf_token %}
+        <h1><strong> Carga Asistencia para evento: </strong> {{ event_name }}</h1>
+        <input type="file" name="file" required>
+        <input type="event_id" hidden name="event_id" value="{{ event_id }}" required>
+        </br>
+        <button type="button" onclick="showModal()" style='background-color: #e3c40c;'>Cargar Asistencia</button>
+        <div id="loadingMessage" style="display:none;">Cargando, por favor espera...</div>
+    </form>
+
+    <div class="unloaded-items-container">
+        <h2>Rut de usuarios no cargados</h2>
+        <table id="unloadedItemsTable">
+            <thead>
+                <tr>
+                    <th>RUT</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>¿Estás seguro de que quieres cargar este archivo?</p>
+        <button type="button" onclick="submitForm()">Sí</button>
+        <button type="button" onclick="closeModal()">No</button>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    function showModal() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    function submitForm() {
+        document.querySelector('.centered-form').submit();
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.getElementById("uploadForm").onsubmit = function(event) {
+        event.preventDefault();
+        showModal();
+    };
+
+    function submitForm() {
+        var form = document.getElementById('uploadForm');
+        var formData = new FormData(form);
+        console.log(formData);
+        var loadingMessage = document.getElementById('loadingMessage');
+        loadingMessage.style.display = 'block';
+        closeModal();
+        
+        fetch("{% url 'attendance_api:post_attendance_api' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+        }).then(response => {
+            return response.json();
+        }).then(data => {
+            if (data.data?.not_found_ruts && data.data?.not_found_ruts?.length > 0) {
+                const tableBody = document.querySelector("#unloadedItemsTable tbody");
+                tableBody.innerHTML = '';
+                console.log(data.data)
+                data.data.not_found_ruts.forEach(run => {
+                    const row = tableBody.insertRow();
+                    const cellRut = row.insertCell(0);
+        
+                    cellRut.textContent = run;
+                });
+            }            
+        }).catch(error => {
+            console.error('Error:', error);
+        }).finally(() => {
+            loadingMessage.style.display = 'none';
+            closeModal();
+        });
+    }
+</script>
+{% endblock %}

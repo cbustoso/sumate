@@ -1,0 +1,1 @@
+from .error_view import error_404, error_500

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block content %} 
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+            <!--begin::Toolbar container-->
+            <div class="d-flex flex-column flex-row-fluid">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-center pt-1">
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">
+                            <a href="{% url 'login' %}" class="text-white text-hover-primary">
+                                <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">Inicio</li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Toolbar wrapper=-->
+            </div>
+            <!--end::Toolbar container=-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!-- begin::Wrapper container -->
+    <div class="app-container container-xxl">
+        <!-- begin::Main -->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!-- begin::Content wrapper -->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!-- begin::Content -->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!-- begin::Main App -->
+                    <div class="row g-7">
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="col-xl-12">
+                                <!--begin::Engage widget 1-->
+                                {% comment %} <div class="card bgi-position-y-bottom bgi-position-x-end bgi-no-repeat bgi-size-cover min-h-250px bg-body mb-5 mb-xl-8" style="background-position: 100% 50px;background-size: 500px auto;background-image:url({% static 'assets/media/misc/city.png' %})" dir="ltr"> {% endcomment %}
+                                <div class="card bgi-position-y-bottom bgi-position-x-end bgi-no-repeat bgi-size-cover min-h-250px bg-body mb-5 mb-xl-8" dir="ltr">
+                                    <!--begin::Body-->
+                                    <div class="card-body d-flex flex-column justify-content-center ps-lg-12">
+                                        <!--begin::Title-->
+                                        <h3 class="text-gray-900 fs-2qx fw-bold mb-7">¿En busca de algún panorama y además acumular puntos😱? <br />Revisa lo que tenemos para ti 🙈 </h3>
+                                        <!--end::Title-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Engage widget 1-->
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-12">
+                            <!--begin::Row-->
+                            <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+                                <!--begin::Col-->
+                                <div class="col-xl-12">
+                                    <!--begin::Player widget 1-->
+                                    <div class="card card-flush h-xl-100">
+                                        <!--begin::Header-->
+                                        <div class="card-header pt-7">
+                                            <!--begin::Title-->
+                                            <h3 class="card-title align-items-start flex-column">
+                                                <span class="card-label fw-bold text-gray-900">Eventos para ti </span>
+                                            </h3>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-7">
+                                            <!--begin::Row-->
+                                            <div class="row g-5 g-xl-9 mb-5 mb-xl-9">
+                                                {% for event in events %} 
+                                                <!--begin::Col-->
+                                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                                    <!--begin::Player card-->
+                                                    <div class="m-0">
+                                                        <!--begin::User pic-->
+                                                        <div class="card-rounded position-relative mb-5">
+                                                        <!--begin::Overlay-->
+                                                        <a class="d-block overlay" data-fslightbox="lightbox-basic" href="{{ event.image.url }}">
+                                                            <!--begin::Image-->
+                                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-450px"
+                                                                style="background-image:url('{{ event.image.url }}')">
+                                                            </div>
+                                                            <!--end::Image-->
+
+                                                            <!--begin::Action-->
+                                                            <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
+                                                                <i class="bi bi-eye-fill text-white fs-3x"></i>
+                                                            </div>
+                                                            <!--end::Action-->
+                                                        </a>
+                                                        <!--end::Overlay-->
+                                                        </div>
+                                                        <!--end::User pic-->
+                                                        <!--begin::Info-->
+                                                        <div class="m-0">
+                                                            <!--begin::Title-->
+                                                            <a href="#" class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2">{{ event.name }}</a>
+                                                            <!--end::Title-->
+                                                            <span class="fw-bold fs-6 text-gray-500 d-block lh-1">{{ event.description }}</span>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                    <!--end::Player card-->
+                                                </div>
+                                                <!--end::Col-->
+                                                {% endfor %} 
+                                            </div>
+                                            <!--end::Row-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Player widget 1-->
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                    </div>
+                </div>
+                <!-- end::Main App -->
+            </div>
+            <!-- end::Content -->
+        </div>
+        <!-- end::Content wrapper -->
+        <!-- begin::Footer --> {% block footer %} {% include 'footer.html' %} {% endblock %}
+        <!-- end::Footer -->
+    </div>
+</div> 
+
+<script src="{% static 'assets/plugins/custom/fslightbox/fslightbox.bundle.js' %}"></script>
+}
+{% endblock content %}

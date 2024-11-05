@@ -1,0 +1,299 @@
+[
+    {
+        "model": "event.eventtype",
+        "pk": 1,
+        "fields": {
+            "name": "Eventos 2023-II",
+            "points": 0,
+            "is_active": false,
+            "created_at": "2024-02-17T23:01:31.919Z",
+            "updated_at": "2024-02-17T23:01:31.919Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 2,
+        "fields": {
+            "name": "Talleres coordinación académica",
+            "points": 150,
+            "is_active": true,
+            "created_at": "2024-02-17T23:01:31.919Z",
+            "updated_at": "2024-02-17T23:01:31.919Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 3,
+        "fields": {
+            "name": "Consejero carrera",
+            "points": 600,
+            "is_active": true,
+            "created_at": "2024-02-17T23:01:46.011Z",
+            "updated_at": "2024-02-17T23:01:46.011Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 4,
+        "fields": {
+            "name": "Entrevista simuladas",
+            "points": 200,
+            "is_active": true,
+            "created_at": "2024-02-17T23:01:52.538Z",
+            "updated_at": "2024-02-17T23:01:52.538Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 5,
+        "fields": {
+            "name": "Feria saludable",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:02.754Z",
+            "updated_at": "2024-02-17T23:02:02.754Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 6,
+        "fields": {
+            "name": "Feria TAV",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:07.834Z",
+            "updated_at": "2024-02-17T23:02:07.834Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 7,
+        "fields": {
+            "name": "Misa pastoral",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:13.986Z",
+            "updated_at": "2024-02-17T23:02:13.986Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 8,
+        "fields": {
+            "name": "Misiones solidarias",
+            "points": 600,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:18.842Z",
+            "updated_at": "2024-02-17T23:02:18.842Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 9,
+        "fields": {
+            "name": "Semana de inclusión",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:23.826Z",
+            "updated_at": "2024-02-17T23:02:23.826Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 10,
+        "fields": {
+            "name": "Taller deportivo",
+            "points": 400,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:28.674Z",
+            "updated_at": "2024-02-17T23:02:28.674Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 11,
+        "fields": {
+            "name": "Taller extracurricular - No deportivo",
+            "points": 300,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:34.235Z",
+            "updated_at": "2024-02-17T23:02:34.235Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 12,
+        "fields": {
+            "name": "Talleres subdirección desarollo estudiantil",
+            "points": 300,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:43.425Z",
+            "updated_at": "2024-02-17T23:02:43.425Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 13,
+        "fields": {
+            "name": "Trivia DL",
+            "points": 50,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:47.617Z",
+            "updated_at": "2024-02-17T23:02:47.617Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 14,
+        "fields": {
+            "name": "Programa de Especialistas",
+            "points": 200,
+            "is_active": true,
+            "created_at": "2024-02-17T23:02:57.866Z",
+            "updated_at": "2024-02-17T23:02:57.866Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 15,
+        "fields": {
+            "name": "Asesorias para Desarrollo Laboral",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:02.474Z",
+            "updated_at": "2024-02-17T23:03:02.474Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 16,
+        "fields": {
+            "name": "Participar de actividades de integración o extracurriculares",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:07.721Z",
+            "updated_at": "2024-02-17T23:03:07.721Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 17,
+        "fields": {
+            "name": "Premio 50",
+            "points": 50,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:14.345Z",
+            "updated_at": "2024-02-17T23:03:14.345Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 18,
+        "fields": {
+            "name": "Premio 150",
+            "points": 150,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:22.329Z",
+            "updated_at": "2024-02-17T23:03:22.329Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 19,
+        "fields": {
+            "name": "Premio 200",
+            "points": 200,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:27.737Z",
+            "updated_at": "2024-02-17T23:03:27.737Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 20,
+        "fields": {
+            "name": "Premio 300",
+            "points": 300,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:31.985Z",
+            "updated_at": "2024-02-17T23:03:31.985Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 21,
+        "fields": {
+            "name": "Premio 100",
+            "points": 100,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:37.993Z",
+            "updated_at": "2024-02-17T23:03:37.993Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 22,
+        "fields": {
+            "name": "Talleres Desarrollo Estudiantil y Subdirección Académica",
+            "points": 150,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:43.385Z",
+            "updated_at": "2024-02-17T23:03:43.385Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 23,
+        "fields": {
+            "name": "Voluntariado pastoral",
+            "points": 150,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:47.784Z",
+            "updated_at": "2024-02-17T23:03:47.784Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 24,
+        "fields": {
+            "name": "Ganador torneo",
+            "points": 180,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:51.992Z",
+            "updated_at": "2024-02-17T23:03:51.992Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 25,
+        "fields": {
+            "name": "Talleres a Punto",
+            "points": 500,
+            "is_active": true,
+            "created_at": "2024-02-17T23:03:56.512Z",
+            "updated_at": "2024-02-17T23:03:56.513Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 26,
+        "fields": {
+            "name": "Premios acumulados",
+            "points": 1200,
+            "is_active": true,
+            "created_at": "2024-02-17T23:04:02.449Z",
+            "updated_at": "2024-02-17T23:04:02.449Z"
+        }
+    },
+    {
+        "model": "event.eventtype",
+        "pk": 27,
+        "fields": {
+            "name": "Puntos por asistencia a 2 o más talleres deportivos",
+            "points": 800,
+            "is_active": true,
+            "created_at": "2024-02-17T23:04:08.177Z",
+            "updated_at": "2024-02-17T23:04:08.177Z"
+        }
+    }
+]

@@ -1,0 +1,302 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+  <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!-- begin::Toolbar -->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+      <!-- begin::Toolbar container -->
+      <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+        <!-- begin::Toolbar container -->
+        <div class="d-flex flex-column flex-row-fluid">
+          <!-- begin::Toolbar wrapper -->
+          <div class="d-flex align-items-center pt-1">
+            <!-- begin::Breadcrumb -->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+              <!-- begin::Item -->
+              <li class="breadcrumb-item text-white fw-bold lh-1">
+                <a href="{% url 'login' %}" class="text-white text-hover-primary"><i class="ki-outline ki-home text-gray-700 fs-6"></i></a>
+              </li>
+              <!-- end::Item -->
+              <!-- begin::Item -->
+              <li class="breadcrumb-item">
+                <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+              </li>
+              <!-- end::Item -->
+              <!-- begin::Item -->
+              <li class="breadcrumb-item text-white fw-bold lh-1">Perfil</li>
+              <!-- end::Item -->
+            </ul>
+            <!-- end::Breadcrumb -->
+          </div>
+          <!-- end::Toolbar wrapper= -->
+        </div>
+        <!-- end::Toolbar container= -->
+      </div>
+      <!-- end::Toolbar container -->
+    </div>
+    <!-- end::Toolbar -->
+    <!-- begin::Wrapper container -->
+    <div class="app-container container-xxl">
+      <!-- begin::Main -->
+      <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <!-- begin::Content wrapper -->
+        <div class="d-flex flex-column flex-column-fluid">
+          <!-- begin::Content -->
+          <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!-- begin::Navbar -->
+            <div class="card mb-5 mb-xl-10">
+              <div class="card-body pt-9 pb-0">
+                <!-- begin::Details -->
+                <div class="d-flex flex-wrap flex-sm-nowrap">
+                  <!-- begin::Info -->
+                  <div class="flex-grow-1">
+                    <!-- begin::Title -->
+                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                      <!-- begin::User -->
+                      <div class="d-flex flex-column">
+                        <!-- begin::Name -->
+                        <div class="d-flex align-items-center mb-2">
+                          <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{ first_name }} {{ last_name }}</a>
+                          <a href="#"><i class="ki-outline ki-verify fs-1 text-primary"></i></a>
+                        </div>
+                        <!-- end::Name -->
+                        <!-- begin::Info -->
+                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                          <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2"><i class="ki-outline ki-profile-circle fs-4 me-1"></i> {{ career }}</a>
+                          <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2"><i class="ki-outline ki-geolocation fs-4 me-1"></i>{{ campus }}</a>
+                          <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary mb-2"><i class="ki-outline ki-sms fs-4"></i>{{ email }}</a>
+                        </div>
+                        <!-- end::Info -->
+                      </div>
+                      <!-- end::User -->
+                    </div>
+                    <!-- end::Title -->
+                    <!-- begin::Stats -->
+                    <div class="d-flex flex-wrap flex-stack">
+                      <!-- begin::Wrapper -->
+                      <div class="d-flex flex-column flex-grow-1 pe-8">
+                        <!-- begin::Stats -->
+                        <div class="d-flex flex-wrap">
+                          <!-- end::Stat -->
+                          <!-- begin::Stat -->
+                          <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                            <!-- begin::Number -->
+                            <div class="d-flex align-items-center">
+                              <i class="ki-outline ki-arrow-up fs-3 text-success me-2"></i>
+                              <div class="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value="80" data-kt-initialized="1">{{ points }}</div>
+                            </div>
+                            <!-- end::Number -->
+                            <!-- begin::Label -->
+                            <div class="fw-semibold fs-6 text-gray-500">Puntos actuales</div>
+                            <!-- end::Label -->
+                          </div>
+                          <!-- end::Stat -->
+                          <!-- begin::Stat -->
+                          <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                            <!-- begin::Number -->
+                            <div class="d-flex align-items-center">
+                              <i class="ki-outline ki-arrow-up fs-3 text-success me-2"></i>
+                              <div class="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value="60" data-kt-countup-prefix="%" data-kt-initialized="1">{{ total_events_attended }}</div>
+                            </div>
+                            <!-- end::Number -->
+                            <!-- begin::Label -->
+                            <div class="fw-semibold fs-6 text-gray-500">Eventos asistidos este semestre</div>
+                            <!-- end::Label -->
+                          </div>
+                          <!-- end::Stat -->
+                        </div>
+                        <!-- end::Stats -->
+                      </div>
+                      <!-- end::Wrapper -->
+                    </div>
+                    <!-- end::Stats -->
+                  </div>
+                  <!-- end::Info -->
+                </div>
+                <!-- end::Details -->
+              </div>
+            </div>
+            <!-- end::Navbar -->
+          </div>
+          <div class="row gy-5 g-xl-10" data-select2-id="select2-data-148-e0w5">
+            <!-- begin::Col -->
+            <div class="col-xl-12 col-xxl-12 mb-5 mb-xl-12">
+              <!-- begin::Table Widget 3 -->
+              <div class="card card-flush h-xl-100" data-select2-id="select2-data-146-6myg">
+                <!-- begin::Card header -->
+                <div class="card-header py-7">
+                  <!-- begin::Tabs -->
+                  <ul class="nav nav-line-tabs nav-line-tabs border-transparent fs-5 fw-bold">
+                    <li class="nav-item">
+                      <a class="nav-link text-active-primary ms-0 py-5 active" data-bs-toggle="tab" href="#kt_tab_pane_1">Obtenidos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-active-primary ms-0 py-5" data-bs-toggle="tab" href="#kt_tab_pane_2">Canjeados</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-active-primary ms-0 py-5"data-bs-toggle="tab" href="#kt_tab_pane_3">Expirados</a>
+                    </li>
+                  </ul>
+                  <!-- end::Tabs -->
+                </div>
+                <!-- end::Card header -->
+                <!-- begin::Card body -->
+                <div class="card-body pt-1" data-select2-id="select2-data-145-jn8h">
+                  <!-- begin::Table -->
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel">
+                      <div class="table-responsive">
+                        <table id="kt_widget_table_3" class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3 dataTable no-footer" data-kt-table-widget-3="all">
+                          <thead class="">
+                            <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                              <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Evento</th>
+                              <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Semestre</th>
+                              <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Puntos</th>
+                              <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Fecha Evento</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for attendance in attendances %}
+                              <tr class="odd">
+                                <td class="min-w-175px">
+                                  <div class="position-relative ps-6 pe-3 py-2">
+                                    <div class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-info"></div>
+                                    <div class="mb-2 fw-bold">{{ attendance.event_name }}</div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <span class="badge">{{ attendance.semester_name }}</span>
+                                </td>
+                                <td>
+                                  <span class="badge badge-light-info">{{ attendance.points_awarded }} Puntos</span>
+                                </td>
+                                <td class="min-w-150px">
+                                  <div class="mb-2 fw-bold">{{ attendance.event_date|date:'d M Y' }}</div>
+                                </td>
+                              </tr>
+                            {% empty %}
+                              <tr>
+                                <td colspan="6" class="text-center">No hay registros de asistencia disponibles.</td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                          <!-- end::Table -->
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="kt_tab_pane_2" role="tabpanel">
+                      <div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel">
+                        <div class="table-responsive">
+                          <table id="kt_widget_table_3" class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3 dataTable no-footer" data-kt-table-widget-3="all">
+                            <thead class="">
+                              <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Evento</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Semestre</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Puntos Usados</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Estado</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Fecha Evento</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for redeemed_prize in redeemed_prizes %}
+                                <tr class="odd">
+                                  <td class="min-w-175px">
+                                    <div class="position-relative ps-6 pe-3 py-2">
+                                      <div class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-black"></div>
+                                      <div class="mb-2 fw-bold">{{ redeemed_prize.prize_name }}</div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="badge">{{ redeemed_prize.semester_name }}</span>
+                                  </td>
+                                  <td>
+                                    <span class="badge badge-light-info">{{ redeemed_prize.points_used }} Puntos</span>
+                                  </td>
+                                  <td>
+                                    {% if redeemed_prize.redemption_status == 'Reservado' %}
+                                        <span class="badge badge-warning">{{ redeemed_prize.redemption_status }}</span>
+                                    {% elif redeemed_prize.redemption_status == 'Entregado' %}
+                                        <span class="badge badge-success">{{ redeemed_prize.redemption_status }}</span>
+                                    {% elif redeemed_prize.redemption_status == 'Cancelado' %}
+                                        <span class="badge badge-danger">{{ redeemed_prize.redemption_status }}</span>
+                                    {% elif redeemed_prize.redemption_status == 'Expirado' %}
+                                        <span class="badge badge-secondary">{{ redeemed_prize.redemption_status }}</span>
+                                    {% else %}
+                                        <span class="badge badge-dark">{{ redeemed_prize.redemption_status }}</span>
+                                    {% endif %}
+                                  </td>
+                                  <td class="min-w-150px">
+                                    <div class="mb-2 fw-bold">{{ redeemed_prize.redemption_date|date:'d M Y' }}</div>
+                                  </td>
+                                </tr>
+                              {% empty %}
+                                <tr>
+                                  <td colspan="6" class="text-center">No hay registros de puntos canjeados disponibles.</td>
+                                </tr>
+                              {% endfor %}
+                            </tbody>
+                            <!-- end::Table -->
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="kt_tab_pane_3" role="tabpanel">
+                      <div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel">
+                        <div class="table-responsive">
+                          <table id="kt_widget_table_3" class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3 dataTable no-footer" data-kt-table-widget-3="all">
+                            <thead class="">
+                              <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Semestre de Expiración</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Fecha de Expiración</th>
+                                <th tabindex="0" rowspan="1" colspan="1" style="width: 0px;">Puntos expirados</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for expired_point_info in expired_points_info %}
+                                <tr class="odd">
+                                  <td class="min-w-175px">
+                                    <div class="position-relative ps-6 pe-3 py-2">
+                                      <div class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-warning"></div>
+                                      <div class="badge">{{ expired_point_info.expired_semester.name }}</div>
+                                    </div>
+                                  </td>
+                                  </td>
+                                  <td class="min-w-150px">
+                                    <div class="mb-2 fw-bold">{{ expired_point_info.created_at|date:'d M Y' }}</div>
+                                  </td>
+                                  <td class="min-w-150px">
+                                    <div class="mb-2 fw-bold">{{ expired_point_info.total_points }}</div>
+                                  </td>
+                                </tr>
+                              {% empty %}
+                                <tr>
+                                  <td colspan="6" class="text-center">No hay registros de puntos expirados disponibles.</td>
+                                </tr>
+                              {% endfor %}
+                            </tbody>
+                            <!-- end::Table -->
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end::Table -->
+                </div>
+                <!-- end::Card body -->
+              </div>
+              <!-- end::Table Widget 3 -->
+            </div>
+            <!-- end::Col -->
+          </div>
+          <!-- end::Content -->
+        </div>
+        <!-- end::Content wrapper -->
+        <!-- begin::Footer --> {% block footer %}
+          {% include 'footer.html' %}
+        {% endblock %}
+        <!-- end::Footer -->
+      </div>
+      <!-- end:::Main -->
+    </div>
+    <!-- end::Wrapper container -->
+  </div>
+  <script src="{% static 'assets/js/general/dataTableUsedPoints.js' %}"></script>
+{% endblock %}

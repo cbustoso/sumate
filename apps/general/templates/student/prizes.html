@@ -1,0 +1,161 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-20">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex align-items-start">
+            <!--begin::Toolbar container-->
+            <div class="d-flex flex-column flex-row-fluid">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-center pt-1">
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">
+                            <a href="{% url 'login' %}" class="text-white text-hover-primary">
+                                <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                            </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-white fw-bold lh-1">Premios</li>
+                        <!--end::Item-->
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Toolbar wrapper=-->
+            </div>
+            <!--end::Toolbar container=-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--begin::Wrapper container-->
+    <div class="app-container container-xxl">
+        <!--begin::Main-->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <div class="card mb-5 mb-xl-10 pb-10">
+                        <div class="card-body pt-9 pb-0">
+                            <div class="row g-6 g-xl-9">
+                                 {% for prize in prizes %}
+                                <!--begin::Col-->
+                                <div class="col-md-4">
+                                    <div class="card card-flush h-xl-100">
+                                        <!--begin::Body-->
+                                        <div class="card-body text-center pb-5">
+                                            <!--begin::Overlay-->
+                                            <a class="d-block overlay" data-fslightbox="lightbox-hot-sales" href="{{ prize.image.url }}">
+                                                <!--begin::Image-->
+                                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7" style="height: 266px; background-image:url('{{ prize.image.url }}')"></div>
+                                                <!--end::Image-->
+                                                <!--begin::Action-->
+                                                <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
+                                                    <i class="ki-outline ki-eye fs-3x text-white"></i>
+                                                </div>
+                                                <!--end::Action-->
+                                            </a>
+                                            <!--end::Overlay-->
+                                            <!--begin::Info-->
+                                            <div class="d-flex align-items-end flex-stack mb-1">
+                                                <!--begin::Title-->
+                                                <div class="text-start">
+                                                    <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">{{ prize.name }}</span>
+                                                    <span class="text-gray-500 mt-1 fw-bold fs-6">Puntos necesarios: {{ prize.points }}</span>
+                                                </div>
+                                                <!--end::Title-->
+                                                <!--begin::Stock-->
+                                                <span class="text-gray-600 text-end fw-bold fs-6"><strong>Stock:</strong> {{ prize.stock }}</span>
+                                                <!--end::Stock-->
+                                            </div>
+                                            <!--end::Info-->
+                                        </div>
+                                        <!--end::Body-->
+                                        <!--begin::Footer-->
+                                        <div class="card-footer d-flex flex-stack pt-0">
+                                            <!--begin::Link-->
+                                            {% if user_points.points >= prize.points and prize.stock > 0 %}
+                                            <button class="btn btn-sm btn-warning flex-shrink-0 me-2 redeem-button" onclick="openConfirmModal('{{ prize.id }}')">
+                                                Canjear
+                                            </button>
+                                            {% elif prize.stock <= 0 %}
+                                            <button class="btn btn-bg-light btn-color-danger btn-sm flex-shrink-0 me-2 redeem-button" disabled>
+                                                Agotado
+                                            </button>
+                                            {% else %}
+                                            <button class="btn btn-bg-light btn-sm flex-shrink-0 me-2 redeem-button" disabled>
+                                                Necesitas más puntos
+                                            </button>
+                                             {% endif %}
+                                            <!--end::Link-->
+                                        </div>
+                                        <!--end::Footer-->
+                                    </div>
+                                </div>
+                                <!--end::Col--> {% empty %} <div class="col-12">
+                                    <p>No hay premios disponibles.</p>
+                                </div> {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end::Content wrapper-->
+            <!--begin::Footer--> {% block footer %} {% include 'footer.html' %} {% endblock %}
+            <!--end::Footer-->
+        </div>
+        <!--end:::Main-->
+    </div>
+    <!--end::Wrapper container-->
+</div>
+
+<script src="{% static 'assets/plugins/custom/fslightbox/fslightbox.bundle.js' %}"></script>
+<script>
+    var currentPrizeId = null;
+
+    function openConfirmModal(prizeId) {
+        currentPrizeId = prizeId;
+
+        Swal.fire({
+            text: "¿Está seguro que desea canjear este producto?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Si, estoy seguro",
+            cancelButtonText: "Más tarde",
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+                if (currentPrizeId) {
+                    fetch('/api/v1/prize/prize-redemption/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
+                        },
+                        body: JSON.stringify({ prize_id: currentPrizeId })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        location.reload();
+                        confirmModal.hide();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }
+            }
+          });
+    }
+</script>
+
+{% endblock %}
