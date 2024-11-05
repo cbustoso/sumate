@@ -1,10 +1,11 @@
 DB_MYSQL_PRODUCTION = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'jplex$sumate',
-        'USER': 'jplex',
-        'PASSWORD': 'c6D7zMx0Ef15okmDdMuW',
-        'HOST': 'jplex.mysql.pythonanywhere-services.com',
+        'NAME': 'sumate_v2',
+        'USER': 'adminaz',
+        'PASSWORD': 'BQ3q949zkTCL',
+        'HOST': 'bdsumatedev.mysql.database.azure.com',
+        'PORT': '3306',
         'CHARSET': 'utf8',
     }
 }
