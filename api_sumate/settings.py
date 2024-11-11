@@ -34,6 +34,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://toverpil.pythonanywhere.com",
     "https://sumateduocalameda.cl",
+    "https://sumatedev-c8djg6bqdngxedca.centralus-01.azurewebsites.net",
 ]
 
 CSRF_TRUSTED_ORIGINS = []
